@@ -2,7 +2,7 @@
 
 ## Technologies & Libraries Utilized:
 
-Express, Nodemon
+Express, Nodemon, Handlebars
 
 ## Available Scripts
 
