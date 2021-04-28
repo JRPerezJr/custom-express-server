@@ -1,17 +1,4 @@
-const friends = [
-  {
-    id: 0,
-    name: 'Keiko Yamada',
-  },
-  {
-    id: 1,
-    name: 'Yuki Kashiwagi',
-  },
-  {
-    id: 2,
-    name: 'Yurina Matsuri',
-  },
-];
+const friendsModel = require('../models/friends.model');
 
 function addFriend(req, res) {
   if (!req.body.name) {
@@ -20,20 +7,20 @@ function addFriend(req, res) {
     });
   }
   const newFriend = {
-    id: friends.length,
+    id: friendsModel.length,
     name: req.body.name,
   };
-  friends.push(newFriend);
+  friendsModel.push(newFriend);
   res.json(newFriend);
 }
 
 function getFriends(req, res) {
-  res.json(friends);
+  res.json(friendsModel);
 }
 
 function getFriendById(req, res) {
   const friendId = Number(req.params.friendId);
-  const friend = friends[friendId];
+  const friend = friendsModel[friendId];
 
   if (friend) {
     res.status(200).json(friend);
