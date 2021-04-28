@@ -7,6 +7,10 @@ const {
 
 const messagesRouter = express.Router();
 
+messagesRouter.use((req, res, next) => {
+  console.log('ip address:', req.ip);
+  next();
+});
 messagesRouter.get('/', getMessages);
 messagesRouter.post('/', postMessage);
 
