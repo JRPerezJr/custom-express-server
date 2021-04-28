@@ -1,4 +1,8 @@
 const express = require('express');
+const {
+  getMessages,
+  postMessage,
+} = require('./controllers/messages.controllers.js');
 
 const app = express();
 
@@ -60,9 +64,8 @@ app.get('/friends/:friendId', (req, res) => {
   }
 });
 
-app.get('/messages', (req, res) => {
-  res.send('<h1>Here there be monsters.</h1>');
-});
+app.get('/messages', getMessages);
+app.post('/messages', postMessage);
 
 app.listen(PORT, () => {
   console.log(`🦄 Flying high on port ${PORT}`);
