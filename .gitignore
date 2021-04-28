@@ -14,6 +14,8 @@
 /client/build
 
 # misc
+/public/music
+/public/images
 .DS_Store
 .env.local
 .env.development.local
