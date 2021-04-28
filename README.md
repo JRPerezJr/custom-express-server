@@ -22,3 +22,8 @@ Installs all dependencies.
 ### `yarn start`
 
 Runs in production mode.
+
+### Note
+
+Add your own assets in a public/app folder or change the static file path at: 
+`app.use('/site', express.static(path.join(__dirname, 'public/app')));`
